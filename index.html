@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>💰 Expense Tracker</h1>
+
+    <div class="balance-section">
+      <div class="balance-card">
+        <h3>Current Balance</h3>
+        <div class="amount" id="balance">रु0.00</div>
+      </div>
+      <div class="balance-card">
+        <h3>Total Income</h3>
+        <div class="amount income" id="income">रु0.00</div>
+      </div>
+      <div class="balance-card">
+        <h3>Total Expenses</h3>
+        <div class="amount expense" id="expenses">रु0.00</div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <form id="transaction-form">
+        <div class="form-group">
+          <label for="title">Transaction Title</label>
+          <input type="text" id="title" placeholder="Enter transaction title..." required />
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount (+ for income, - for expense)</label>
+          <input type="number" id="amount" step="0.01" placeholder="Enter amount..." required />
+        </div>
+        <button type="submit" class="btn">Add Transaction</button>
+      </form>
+    </div>
+
+    <div class="filter-section">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="income">Income</button>
+      <button class="filter-btn" data-filter="expense">Expenses</button>
+    </div>
+
+    <div class="transactions-list" id="transactions-container">
+      <div class="empty-state">
+        <p>No transactions yet. Add your first transaction above!</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
